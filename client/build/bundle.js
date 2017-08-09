@@ -68,6 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListView = __webpack_require__(1);
+var allCountries = [];
 
 var app = function(){
   var url = "https://restcountries.eu/rest/v2/all";
@@ -85,9 +86,76 @@ var requestComplete = function(){
   if(this.status != 200) return;
   var jsonString = this.responseText;
   var bucketList = JSON.parse(jsonString);
-  var ui = new ListView(bucketList);
+  allCountries = bucketList;
+
+  var button = document.getElementById("show-countries");
+  button.addEventListener('click', function(){populateList(bucketList);});
+
+  var regionSelect = document.getElementById("region-select");
+  regionSelect.addEventListener('change', populateSelect);
+  var select = document.getElementById("country-select");
+  select.addEventListener('change', showCountry);
 };
 
+var populateList = function(countries){
+  var ul = document.getElementById('country-list');
+  while(ul.firstChild){
+    ul.removeChild(ul.firstChild);
+  }
+  countries.forEach(function(country){
+    var name = document.createElement('li');
+    var flag = document.createElement('li');
+    var population = document.createElement('li');
+    var capital = document.createElement('li');
+    var space = document.createElement('li');
+
+    name.innerText = "Name: " + country.name;
+    population.innerText = "Population: " + country.population;
+    capital.innerText = "Capital City: " + country.capital;
+    space.innerText = "\n";
+    var img = document.createElement('img');
+    img.src = country.flag;
+    img.style.height = '200px';
+    flag.appendChild(img);   
+    
+    ul.appendChild(name);
+    ul.appendChild(flag);
+    ul.appendChild(population);
+    ul.appendChild(capital);
+    ul.appendChild(space);
+  })
+
+  var jsonCountry= JSON.stringify(countries);
+  localStorage.setItem("last country", jsonCountry);
+}
+
+var populateSelect = function(){
+  var region = this.value;
+  var regionCountries = allCountries.filter(function(country){
+    return country.region === region;
+  })
+  var select = document.getElementById("country-select");
+
+  var length = select.options.length;
+     for(var i = length - 1 ; i >= 1 ; i--)
+     {
+         select.remove(i);
+     }
+
+  regionCountries.forEach(function(country){
+    var option = document.createElement('option');
+    option.innerText = country.name;
+    select.appendChild(option);
+  })
+}
+
+var showCountry = function(){
+  var selected = this.value;
+  var selectObj = allCountries.filter(function(country){
+    return country.name === selected;
+  })
+  populateList(selectObj);
+}
 
 window.addEventListener('load', app);
 
