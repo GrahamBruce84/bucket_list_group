@@ -20,9 +20,10 @@ var requestComplete = function(){
   allCountries = bucketList;
 
   var selectedCountry = JSON.parse(localStorage.getItem("Select Country"));
+  var bucket = new ListView(selectedCountry);
 
   var button = document.getElementById("add-country");
-  // button.addEventListener('click', function(){});
+  button.addEventListener('click', bucket);
 
 
   var regionSelect = document.getElementById("region-select");
