@@ -5,6 +5,11 @@ body {
 
 }
 
+#center{
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
 h1 {
   border: 10px groove #E5F993;
   text-align: center;
@@ -15,9 +20,8 @@ h1 {
 
 h2 {
   border: 10px groove #E5F993;
-  margin: 0 auto;
-  text-align: center;
   font-family: 'Fredericka the Great', cursive;
   color: #69A197;
   background-color: #E5F993;
+  backgroundpadding-left: 200px;
 }
