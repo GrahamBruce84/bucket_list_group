@@ -25,7 +25,10 @@ h2 {
   background-color: #E5F993;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #countries {
   text-align: center;
-  list-style-type: none;
 }
