@@ -26,5 +26,6 @@ h2 {
 }
 
 #countries {
-  text-align: center;;
+  text-align: center;
+  list-style-type: none;
 }
