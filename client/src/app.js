@@ -22,7 +22,7 @@ var requestComplete = function(){
   var selectedCountry = JSON.parse(localStorage.getItem("Select Country"));
 
   var button = document.getElementById("add-country");
-  // button.addEventListener('click', function(){populateList(bucketList);});
+  // button.addEventListener('click', function(){populateBucket(bucketList);});
 
   var regionSelect = document.getElementById("region-select");
   regionSelect.addEventListener('change', populateSelect);
