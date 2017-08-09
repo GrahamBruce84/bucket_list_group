@@ -1,7 +1,7 @@
 var ListView = require('./views/listView');
 
 var app = function(){
-  var url = "http://localhost:3000/list";
+  var url = "https://restcountries.eu/rest/v2/all";
   makeRequest(url, requestComplete);
 }
 
@@ -14,9 +14,9 @@ var makeRequest = function(url, callback){
 
 var requestComplete = function(){
   if(this.status != 200) return;
-  var quoteString = this.responseText;
-  var quotes = JSON.parse(quoteString);
-  var ui = new QuoteView(quotes);
+  var jsonString = this.responseText;
+  var bucketList = JSON.parse(jsonString);
+  var ui = new ListView(bucketList);
 };
 
 
