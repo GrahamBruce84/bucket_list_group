@@ -164,7 +164,7 @@ var ListView = function(listItems){
   this.render(listItems);
 }
 
-ListView.prottype = {
+ListView.prototype = {
   render: function(listItems){
     console.log(listItems);
     listItems.forEach( function(item){
