@@ -1,6 +1,7 @@
 body {
   background-image: url("./images/delfi-de-la-rua-152121.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
 }
 
 h2 {
+  margin: 0 auto;
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
   color: #001f3f;
