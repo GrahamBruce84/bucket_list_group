@@ -6,18 +6,18 @@ body {
 }
 
 h1 {
+  border: 10px groove #E5F993;
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
   color: #69A197;
-  background-color: #F9DC5C;
+  background-color: #E5F993;
 }
 
 h2 {
-  padding-left: auto;
-  padding-right: auto;
+  border: 10px groove #E5F993;
   margin: 0 auto;
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
   color: #69A197;
-  background-color: #F9DC5C;
+  background-color: #E5F993;
 }
