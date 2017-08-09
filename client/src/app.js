@@ -59,7 +59,7 @@ var populateList = function(countries){
 
 
   var button = document.getElementById("add-country");
-  button.addEventListener('click', function(){new ListView(countries);});
+  button.addEventListener('click', function(){new ListView(countries)});
 
 
   var jsonCountry= JSON.stringify(countries);
