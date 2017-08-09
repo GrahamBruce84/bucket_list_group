@@ -34,7 +34,7 @@ li{
 }
 
 #bucket-list {
-  display: inline-block;
+  text-align: center;
   border: 10px groove #69A197;
   font-family: 'Fredericka the Great', cursive;
   color: #69A197;
