@@ -88,8 +88,10 @@ var requestComplete = function(){
   var bucketList = JSON.parse(jsonString);
   allCountries = bucketList;
 
-  var button = document.getElementById("show-countries");
-  button.addEventListener('click', function(){populateList(bucketList);});
+  var selectedCountry = JSON.parse(localStorage.getItem("Select Country"));
+
+  var button = document.getElementById("add-country");
+  // button.addEventListener('click', function(){populateList(bucketList);});
 
   var regionSelect = document.getElementById("region-select");
   regionSelect.addEventListener('change', populateSelect);
@@ -123,7 +125,7 @@ var populateList = function(countries){
   })
 
   var jsonCountry= JSON.stringify(countries);
-  localStorage.setItem("last country", jsonCountry);
+  localStorage.setItem("Select Country", jsonCountry);
 }
 
 var populateSelect = function(){
