@@ -20,10 +20,10 @@ var requestComplete = function(){
   allCountries = bucketList;
 
   var selectedCountry = JSON.parse(localStorage.getItem("Select Country"));
-  var bucket = new ListView(selectedCountry);
+  // var bucket = new ListView(selectedCountry);
 
-  var button = document.getElementById("add-country");
-  button.addEventListener('click', bucket);
+  // var button = document.getElementById("add-country");
+  // button.addEventListener('click', function(){new ListView(selectedCountry);});
 
 
   var regionSelect = document.getElementById("region-select");
@@ -56,6 +56,11 @@ var populateList = function(countries){
     ul.appendChild(population);
     ul.appendChild(capital);
   })
+
+
+  var button = document.getElementById("add-country");
+  button.addEventListener('click', function(){new ListView(countries);});
+
 
   var jsonCountry= JSON.stringify(countries);
   localStorage.setItem("Select Country", jsonCountry);
