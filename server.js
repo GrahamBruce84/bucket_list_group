@@ -22,4 +22,13 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/client/build/index.html');
 });
 
+app.post('/listItems', function(req, res){
+  db.collection('listItems').find().toArray(function(err, results){
+    res.json(results);
+  });
+})
 
+app.post('/delete', function(req, res){
+  db.collection('listItems').remove({});
+  res.redirect('/');
+});
