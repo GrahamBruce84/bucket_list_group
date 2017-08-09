@@ -107,12 +107,10 @@ var populateList = function(countries){
     var flag = document.createElement('li');
     var population = document.createElement('li');
     var capital = document.createElement('li');
-    var space = document.createElement('li');
 
     name.innerText = "Name: " + country.name;
     population.innerText = "Population: " + country.population;
     capital.innerText = "Capital City: " + country.capital;
-    space.innerText = "\n";
     var img = document.createElement('img');
     img.src = country.flag;
     img.style.height = '200px';
@@ -122,7 +120,6 @@ var populateList = function(countries){
     ul.appendChild(flag);
     ul.appendChild(population);
     ul.appendChild(capital);
-    ul.appendChild(space);
   })
 
   var jsonCountry= JSON.stringify(countries);
