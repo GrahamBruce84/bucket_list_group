@@ -33,6 +33,14 @@ li{
   font-size: 40px;
 }
 
+#bucket-list {
+  display: inline-block;
+  border: 10px groove #69A197;
+  font-family: 'Fredericka the Great', cursive;
+  color: #69A197;
+  background-color: #E5F993;
+}
+
 #countries {
   border: 10px groove #69A197;
   text-align: center;
