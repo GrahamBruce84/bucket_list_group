@@ -25,14 +25,6 @@ h2 {
   background-color: #E5F993;
 }
 
-#region-select {
-  text-align: center;
-}
-
-#country-select {
-  text-align: center;
-}
-
-#add-country {
-  text-align: center;
+#countries {
+  text-align: center;;
 }
