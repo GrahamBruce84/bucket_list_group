@@ -2,21 +2,25 @@ body {
   background-image: url("./images/delfi-de-la-rua-152121.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
 
+#center{
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 h1 {
+  border: 10px solid #69A197;
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
   color: #69A197;
-  background-color: #F9DC5C;
+  background-color: #E5F993;
 }
 
 h2 {
-  background
-  margin: 0 auto;
   text-align: center;
+  border: 10px groove #69A197;
   font-family: 'Fredericka the Great', cursive;
   color: #69A197;
-  background-color: #F9DC5C;
+  background-color: #E5F993;
 }
