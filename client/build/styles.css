@@ -29,6 +29,10 @@ ul {
   list-style-type: none;
 }
 
+li{
+  font-size: 40px;
+}
+
 #countries {
   border: 10px groove #69A197;
   text-align: center;
