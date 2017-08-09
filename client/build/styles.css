@@ -13,7 +13,8 @@ h1 {
 }
 
 h2 {
-  background
+  padding-left: auto;
+  padding-right: auto;
   margin: 0 auto;
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
