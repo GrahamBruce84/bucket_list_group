@@ -1,5 +1,6 @@
 var ListView = require('./views/listView');
 var allCountries = [];
+var countryToAdd = null;
 
 var app = function(){
   var url = "https://restcountries.eu/rest/v2/all";
@@ -20,10 +21,10 @@ var requestComplete = function(){
   allCountries = bucketList;
 
   var selectedCountry = JSON.parse(localStorage.getItem("Select Country"));
-  // var bucket = new ListView(selectedCountry);
 
-  // var button = document.getElementById("add-country");
-  // button.addEventListener('click', function(){new ListView(selectedCountry);});
+
+  var button = document.getElementById("add-country");
+  button.addEventListener('click', function(){new ListView(countryToAdd)});
 
 
   var regionSelect = document.getElementById("region-select");
@@ -33,6 +34,7 @@ var requestComplete = function(){
 };
 
 var populateList = function(countries){
+  console.log(countries);
   var ul = document.getElementById('country-list');
   while(ul.firstChild){
     ul.removeChild(ul.firstChild);
@@ -57,14 +59,9 @@ var populateList = function(countries){
     ul.appendChild(capital);
   })
 
-
-  var button = document.getElementById("add-country");
-  button.addEventListener('click', function(){new ListView(countries);});
-
-
-  var jsonCountry= JSON.stringify(countries);
-  localStorage.setItem("Select Country", jsonCountry);
+  countryToAdd = countries;
 }
+
 
 var populateSelect = function(){
   var region = this.value;

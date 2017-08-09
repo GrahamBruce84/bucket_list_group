@@ -13,7 +13,7 @@ BucketList.prototype = {
       });
     });
   },
-  add: function(filmToAdd, callback){
+  add: function(countryToAdd, callback){
     MongoClient.connect(this.url, function(err, db){
       if(db){
         var collection = db.collection('bucketlist');
